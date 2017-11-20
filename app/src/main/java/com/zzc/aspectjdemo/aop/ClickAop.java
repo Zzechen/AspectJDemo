@@ -22,7 +22,7 @@ public class ClickAop {
 
     private HashMap<String,Long> mTimeMap = new HashMap<>();
 
-    @Around("execution(* android.view.View.OnClickListener.onClick(..))")
+    @Around("execution(* android.view.View.OnClickListener.onClick(..)) && !@annotation(com.zzc.aspectjdemo.annotation.ClickFilter)")
     public Object clickAop(ProceedingJoinPoint point) {
         long curTimeMills = TimeUtils.getCurTimeMills();
         String key = point.toString();

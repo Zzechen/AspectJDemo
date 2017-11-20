@@ -69,8 +69,11 @@ public class PermissionAop {
                     fragmentManager.executePendingTransactions();
                 }
                 fragment.request(permission);
+            }else {
+                return proceed(point);
             }
         } else {
+            return null;
         }
         return null;
     }

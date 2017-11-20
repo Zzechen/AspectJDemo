@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.zzc.aspectjdemo.R;
+import com.zzc.aspectjdemo.annotation.ClickFilter;
 import com.zzc.aspectjdemo.annotation.PermissionIntercept;
 import com.zzc.aspectjdemo.databinding.ActivityPermissionBinding;
 
@@ -28,6 +29,7 @@ public class PermissionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_permission);
         mBinding.btnPermissionCamera.setOnClickListener(new View.OnClickListener() {
+            @ClickFilter
             @Override
             public void onClick(View v) {
                 camera(PermissionActivity.this,Manifest.permission.WRITE_EXTERNAL_STORAGE);
@@ -37,6 +39,6 @@ public class PermissionActivity extends AppCompatActivity {
 
     @PermissionIntercept(permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE})
     private void camera(Activity activity,String permission) {
-        Toast.makeText(this, "camera permission is granted", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "WRITE_EXTERNAL_STORAGE permission is granted", Toast.LENGTH_SHORT).show();
     }
 }
