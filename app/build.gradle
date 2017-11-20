@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-aspectjx'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.zzc.aspectjdemo"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding{
+        enabled =true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+
+    compile "org.aspectj:aspectjrt:$rootProject.aspectjrtVersion"
+    compile "com.jakewharton.hugo:hugo-runtime:$rootProject.hugoVersion"
+    compile "com.jakewharton.hugo:hugo-annotations:$rootProject.hugoVersion"
+    compile "org.greenrobot:eventbus:${eventbusVersion}"
+    compile "com.android.support:recyclerview-v7:${supportLibraryVersion}"
+}
+
+//aspectjx {
+//    excludeJarFilter 'com.zzc.aspectjdemo.databing'
+//}
