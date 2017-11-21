@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/bg_divider_horizontal"
+        android:showDividers="middle"
+        android:orientation="horizontal">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_all_call"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="call method"/>
+
+                <Button
+                    android:id="@+id/btn_all_get"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="get filed"/>
+
+                <Button
+                    android:id="@+id/btn_all_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="set filed"/>
+
+                <Button
+                    android:id="@+id/btn_all_call_constructor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="call constructor"/>
+
+                <Button
+                    android:id="@+id/btn_all_exec_constructor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="execution constructor"/>
+                <Button
+                    android:id="@+id/btn_all_init_constructor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="initialization constructor"/>
+                <Button
+                    android:id="@+id/btn_all_handler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="handler exception"/>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_all_log"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</layout>
