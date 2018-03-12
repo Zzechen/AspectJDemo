@@ -101,11 +101,12 @@ public class AllAopActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     int i = 5 / 0;
-                }catch (ArithmeticException e){
+                } catch (ArithmeticException e) {
                     add("create an exception:ArithmeticException");
                 }
             }
         });
+
         mList = new ArrayList<>();
         mAdapter = new AllLogAdapter(mList, this);
         mBinding.rvAllLog.setAdapter(mAdapter);

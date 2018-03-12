@@ -3,11 +3,16 @@
 buildscript {
     repositories {
         jcenter()
+        maven{
+            url uri('repo')
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
 //        classpath 'com.uphyca.gradle:gradle-android-aspectj-plugin:0.9.14'
-        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:1.1.0'
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.0'
+        classpath 'org.aspectj:aspectjtools:1.8.9'
+        classpath 'com.app.plugin:gradleplugin:1.0.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -18,7 +23,7 @@ allprojects {
         jcenter()
     }
 }
-
+//task compileJava {}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
