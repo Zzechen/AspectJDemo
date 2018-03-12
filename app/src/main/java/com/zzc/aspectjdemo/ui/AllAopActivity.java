@@ -107,6 +107,8 @@ public class AllAopActivity extends AppCompatActivity {
             }
         });
 
+        mBinding.btnAllHandler.setOnClickListener(v -> callMethod());
+
         mList = new ArrayList<>();
         mAdapter = new AllLogAdapter(mList, this);
         mBinding.rvAllLog.setAdapter(mAdapter);
