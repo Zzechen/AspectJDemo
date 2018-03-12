@@ -11,6 +11,8 @@ import org.gradle.api.Project
  * 使用 AspectJ 的编译器（ajc，一个java编译器的扩展）
  * 对所有受 aspect 影响的类进行织入。
  * 在 gradle 的编译 task 中增加额外配置，使之能正确编译运行。
+ *
+ * https://github.com/north2016/T-MVP
  */
 public class AspectjPlugin implements Plugin<Project> {
 
